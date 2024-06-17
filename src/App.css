@@ -1,38 +1,421 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Reem Kufi", sans-serif !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button{
+  color: white;
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button.open{
+  display: block;
+  cursor: pointer;
+}
+
+.navbar-circle {
+  margin: 2%;
+  position: fixed;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 4;
+  left: 80%;
+  background-color: orange;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: color 0.6s ease;
+  display: flex;
+  justify-content: center; /* Horizontal alignment */
+  align-items: center;
+}
+
+.navbar-circle div{
+  width: 30px;
+  height: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-circle span{
+  width: 100%;
+  height: 0.2rem;
+  background-color: #fff;
+  border-radius: 0.1rem  ;
+}
+
+
+.navbar-menu-container {
+  display: none;
+}
+.navbar-links-container ul {
+ position: relative;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  list-style-type: none;
+}
+.navbar-links-container ul li{
+  position: relative;
+margin-right: 3rem;
+text-decoration: none;
+color: black;
+font-size: 1.1rem;
+font-weight: 600;
+z-index: 3;
+transition: color 0.3s ease;
+
+}
+
+.navbar-links-container a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.navbar-links-container a:hover {
+  color: #000000;
+}
+.navbar-links-container a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -310px;
+  width: 300px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: right 0.3s ease;
+  padding: 20px;
+  z-index: 5;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.close-btn {
+  left: 80%;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.sidebar-content ul{
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+}
+.sidebar-content ul li{
+  padding: 20px 10px; 
+}
+
+.sidebar-content ul li:hover{
+  background-color: #1b1b1b;
+
+  
+}
+
+.sidebar-content ul li .custom-link{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.logo a{
+  margin-left: 10px;
+  font-size: 2.1rem;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.home-container {
+  position: relative;
+  background-color: gray;
+  background-size: auto;
+  height: 100vh; /* 30% of the viewport height */
+  overflow-x: hidden;
+}
+
+.me {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.moving-text {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: transform 5s linear;
+  z-index: 3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.moving-text.center {
+  transform: translateX(0);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.moving-text.leftToRight {
+  transform: translateX(-5%);
+
+
+
+}
+
+.moving-text.rightToLeft {
+  transform: translateX(50%);
+
+
+}
+
+.second-container {
+  margin: auto;
+  background-color: white;
+  background-size: auto;
+  height: 100vh; 
+}
+
+.sphere-background {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgb(165, 164, 164);
+  left: 50%;
+  top: 105%;
+  animation: move 10s infinite linear;
+}
+
+.sphere-background1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(211, 208, 208);
+  left: 35%;
+  top: 150%;
+  animation: move 10s infinite linear;
+}
+
+.sphere-background2 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgb(231, 229, 229);
+  left: 78%;
+  top: 120%;
+  animation: move1 10s infinite linear;
+}
+
+@keyframes move {
+
+  75% { transform: translate(50px, 50px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes move1 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(50px, -50px); }
+}
+
+.sphere {
+  margin: 5%;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.sphere p {
+  margin: 30px;
+}
+
+.magnetic-circle {
+  margin-top: -15%;
+  margin-left: 65%;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: transform 0.1s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+.magnetic-circle a {
+  margin: 30px;
+}
+
+.magnetic-circle:hover {
+  background-color: rgb(255, 133, 32); /* Target color on hover */
+  transition: background-color 0.5s ease; /* Animation duration and easing */
+}
+
+.third-container {
+    position: relative;
+  margin: auto;
+  background-color: rgb(233, 231, 231);
+  background-size: auto;
+  height: 100vh; /* 30% of the viewport height */
+}
+
+.third-container .banner{
+    margin-left: 40%;
+    font-size: 2.1rem;
+}
+
+.card{
+    width: 14rem;
+}
+
+.carousel-inner{
+    margin-left: 3%;
+   
+}
+
+.fourth-container {
+  position: relative;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  background-size: auto;
+  height: 100vh;
+}
+
+.contact{
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.form-container{
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  background-size: auto;
+  height: 70vh;
+}
+
+form input{
+  text-decoration: none;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.contact-sphere{
+  margin: 5%;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: rgb(41, 40, 40);
+  display: block;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact-sphere .icon{
+  margin-top: 30%;
+}
+
+.social-media{
+  position: relative;
+  display: flex;
+  margin-top: 20%;
+  margin-left: 30%;
+}
+
+.social-media p{
+  margin-left: 5%;
+}
+
+.fifth-container {
+  position: relative;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  background-size: auto;
+  height: 20vh;
+}
+
+.social-media1{
+  position: relative;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+.social-media1 p{
+  margin-left: 2%;
+}
+.footer-nav{
+  margin-top: 2%;
+}
+.footer-nav a{
+  color: white;
+  position: relative;
+  display: block;
+  text-decoration: none;
 }
