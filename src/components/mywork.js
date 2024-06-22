@@ -32,7 +32,7 @@ const Mywork = () => {
               </div>
             </div>
           </div>
-          <div className="carousel-inner col" data-aos="fade-left">
+          <div className="carousel-inner col " data-aos="fade-left">
             <div className="carousel-item active"></div>
             <div className="card">
               <img src={image2} className="card-img-top" alt="..." />
@@ -44,7 +44,7 @@ const Mywork = () => {
               </div>
             </div>
           </div>
-          <div className="carousel-inner col" data-aos="fade-left">
+          <div className="carousel-inner col " data-aos="fade-left">
             <div className="carousel-item active"></div>
             <div className="card">
               <img src={image3} className="card-img-top" alt="..." />

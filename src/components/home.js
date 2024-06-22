@@ -1,5 +1,5 @@
 import Navbar from "./navbar"; // Importing the Navbar component
-import BannerBackground from "../asset/me.png"; // Importing the background image
+import BannerBackground from "../asset/me1.png"; // Importing the background image
 import React, { useEffect, useRef, useState } from "react"; // Importing necessary React hooks
 import Sidebar from "./sidebar";
 import { TfiAlignJustify } from "react-icons/tfi";
