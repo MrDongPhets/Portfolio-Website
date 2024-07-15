@@ -56,18 +56,23 @@ const About = () => {
       <div className="sphere-background2"></div>
       <div className="sphere" data-aos="fade-right">
         <p>
-          Hi, I'm Christian B. Mendoza, a passionate graphic designer and
-          frontend developer. With a keen eye for aesthetics and a solid
-          foundation in modern web technologies, I specialize in creating
-          visually stunning and highly functional websites. My expertise spans
-          across user interface design, user experience optimization, and coding
-          with HTML, CSS, and JavaScript. I thrive on transforming ideas into
-          engaging digital experiences that leave a lasting impression. Let's
-          connect and bring your vision to life!
+          Hi, I'm Christian B. Mendoza, a passionate web developer. With a keen
+          eye for aesthetics and a solid foundation in modern web technologies,
+          I specialize in creating visually stunning and highly functional
+          websites. My expertise spans across user interface design, user
+          experience optimization, and coding with HTML, CSS, and JavaScript. I
+          thrive on transforming ideas into engaging digital experiences that
+          leave a lasting impression. Let's connect and bring your vision to
+          life!
         </p>
       </div>
-      <div ref={divRef} className="magnetic-circle" data-aos="fade-left">
-        <button onClick={() => navigate("/aboutpage")}>About More</button>
+      <div
+        ref={divRef}
+        className="magnetic-circle"
+        data-aos="fade-left"
+       
+      >
+      
       </div>
     </div>
   );

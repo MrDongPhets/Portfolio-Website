@@ -59,7 +59,7 @@ const Contact = () => {
 
                 <div>
                   <p>
-                    <IoIosMail size={40} /> christiandodong0825@gmail.com
+                    <IoIosMail size={40} /> mendozachristian0825@gmail.com
                   </p>
                 </div>
                 <div className="social-media">

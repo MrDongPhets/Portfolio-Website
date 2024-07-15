@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
-import image1 from "../asset/mywork.jpg";
-import image2 from "../asset/mywork1.jpg";
-import image3 from "../asset/mywork2.jpg";
+import image1 from "../asset/Crud.PNG";
+import image2 from "../asset/mathQuiz.PNG";
+import image3 from "../asset/invoice.PNG";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 
 const Mywork = () => {
    const navigate = useNavigate();
+      const openExternalWebsite = (url) => {
+        window.open(url, "_blank");
+      };
   useEffect(() => {
     AOS.init({
       duration: 1000, // duration of the animations in milliseconds
@@ -26,9 +29,21 @@ const Mywork = () => {
               <img src={image1} className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  This project showcases my ability to develop end-to-end web
+                  applications and my commitment to delivering high-quality and
+                  maintainable code.
                 </p>
+                <button
+                  onClick={() =>
+                    openExternalWebsite(
+                      "https://github.com/MrDongPhets/CRUD-Search"
+                    )
+                  }
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  Github
+                </button>
               </div>
             </div>
           </div>
@@ -38,9 +53,21 @@ const Mywork = () => {
               <img src={image2} className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  The Math Quest system is designed to cater to each child's
+                  unique learning needs and preferences, providing a tailored
+                  educational experience.
                 </p>
+                <button
+                  onClick={() =>
+                    openExternalWebsite(
+                      "https://github.com/MrDongPhets/Children-Math-Quiz"
+                    )
+                  }
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  Github
+                </button>
               </div>
             </div>
           </div>
@@ -49,43 +76,22 @@ const Mywork = () => {
             <div className="card">
               <img src={image3} className="card-img-top" alt="..." />
               <div className="card-body">
+                <p>Invoice Website is ongoing</p>
                 <button
-                  onClick={() => navigate("/myworkpage")}
+                  onClick={() =>
+                    openExternalWebsite(
+                      "https://github.com/MrDongPhets/Invoice-Website-Ongoing"
+                    )
+                  }
                   type="button"
                   class="btn btn-dark"
                 >
-                  Load More
+                  Github
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container">
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   );

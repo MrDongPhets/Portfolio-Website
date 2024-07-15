@@ -2,19 +2,26 @@ import Navbar from "./navbar"; // Importing the Navbar component
 import BannerBackground from "../asset/me1.png"; // Importing the background image
 import React, { useEffect, useRef, useState } from "react"; // Importing necessary React hooks
 import Sidebar from "./sidebar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { TfiAlignJustify } from "react-icons/tfi";
 
 const Home = () => {
-    const [color, setColor] = useState(false);
+   useEffect(() => {
+     AOS.init({
+       duration: 1000, // duration of the animations in milliseconds
+     });
+   }, []);
+    const [pop, setPop] = useState(false);
 
-    const changeColor = () => {
+    const popUP = () => {
       if (window.scrollY >= 90) {
-        setColor(true);
+        setPop(true);
       } else {
-        setColor(false);
+        setPop(false);
       }
     };
-  window.addEventListener("scroll", changeColor);
+  window.addEventListener("scroll", popUP);
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -51,7 +58,10 @@ const Home = () => {
   return (
     <div className="home-container" id="/">
       {/* Navbar component */}
-      <div className={color ? "navbar-circle" : ""} onClick={toggleSidebar}>
+      <div
+        className={pop ? "navbar-circle " : ""}
+        onClick={toggleSidebar}
+      >
         <div>
           <span></span>
           <span></span>
