@@ -4,9 +4,14 @@ import { IoIosMail } from "react-icons/io";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-  return ( 
+  const navigate = useNavigate();
+  const openExternalWebsite = (url) => {
+    window.open(url, "_blank");
+  };
+  return (
     <div className="fourth-container" id="contact">
       <div className="contact">CONTACT ME</div>
       <div className="container">
@@ -63,14 +68,35 @@ const Contact = () => {
                   </p>
                 </div>
                 <div className="social-media">
-                  <p>
-                    <FaFacebookSquare size={40} />
+                  <p className="icon-pointer">
+                    <FaFacebookSquare
+                      size={40}
+                      onClick={() =>
+                        openExternalWebsite(
+                          "https://www.facebook.com/profile.php?id=100010285125943"
+                        )
+                      }
+                    />
                   </p>
-                  <p>
-                    <FaSquareInstagram size={40} />
+                  <p className="icon-pointer">
+                    <FaSquareInstagram
+                      size={40}
+                      onClick={() =>
+                        openExternalWebsite(
+                          "https://www.instagram.com/christdodong/"
+                        )
+                      }
+                    />
                   </p>
-                  <p>
-                    <FaLinkedin size={40} />
+                  <p className="icon-pointer">
+                    <FaLinkedin
+                      size={40}
+                      onClick={() =>
+                        openExternalWebsite(
+                          "https://www.linkedin.com/in/christian-mendoza-20bb97314/"
+                        )
+                      }
+                    />
                   </p>
                 </div>
               </div>
